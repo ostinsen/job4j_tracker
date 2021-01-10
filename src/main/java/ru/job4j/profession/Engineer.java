@@ -6,4 +6,7 @@ public class Engineer extends Profession {
     public int getAmountBuild() {
         return amountBuild;
     }
+    public Engineer(String name){
+        this.setName(name);
+    }
 }

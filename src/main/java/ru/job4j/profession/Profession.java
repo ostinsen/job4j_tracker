@@ -21,4 +21,8 @@ public class Profession {
     public String getBirthday() {
         return birthday;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
