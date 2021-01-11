@@ -14,5 +14,13 @@ public class Engineer extends Profession {
         this.setName(name);
 
     }
+    public Engineer(String name, String surname, String education, String birthday){
+        super(name, surname, education, birthday);
+
+    }
+    public Engineer(String name, String surname, String education, String birthday, int amountBuild){
+        super(name, surname, education, birthday);
+        this.amountBuild = amountBuild;
+    }
 
 }
