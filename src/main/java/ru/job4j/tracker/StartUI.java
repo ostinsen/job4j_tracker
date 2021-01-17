@@ -22,7 +22,7 @@ public class StartUI {
                 System.out.println("=== 1. Show all items ====");
                 Item[] items = tracker.findAll();
                 for (Item it : items){
-                    System.out.println(it.toString());
+                    System.out.println(it);
                 }
 
             } else if (select == 2) {
@@ -35,7 +35,7 @@ public class StartUI {
 
                 if (tracker.replace(id, item)) {
                     // вывод об успешности операции
-                    System.out.println("Замена прошла успешно " + tracker.findById(id).getId() + " " + tracker.findById(id).getName());
+                    System.out.println("Замена прошла успешно " + item);
 
                 } else {
                     // вывод об ошибке
@@ -60,7 +60,7 @@ public class StartUI {
 
                 Item item = tracker.findById(id);
                 if (item != null) {
-                    System.out.println("Заявка с таким id  найдена: " + item.getId() + " " + item.getName());
+                    System.out.println("Заявка с таким id  найдена: " + item);
                 } else {
                     System.out.println("Заявка с таким id не найдена");
                 }
@@ -71,7 +71,7 @@ public class StartUI {
                 Item[] itemsName = tracker.findByName(name);
                 if( itemsName.length != 0){
                     for (Item item : itemsName ) {
-                        System.out.println(item.toString());
+                        System.out.println(item);
                     }
                 } else {
                     System.out.println("Заявки с таким именем не найдены");
