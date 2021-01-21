@@ -1,13 +1,19 @@
 package ru.job4j.tracker;
 
 public class EditItemAction implements UserAction {
+    private final Output out;
+
+    public EditItemAction(Output out) {
+        this.out = out;
+    }
+
     @Override
     public String name() {
         return "=== 2. Edit item ====";
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute (Input input, Tracker tracker) {
 
         int id = Integer.valueOf(input.askStr("Enter id: "));
         String name = input.askStr("Enter name: ");
@@ -15,11 +21,11 @@ public class EditItemAction implements UserAction {
 
         if (tracker.replace(id, item)) {
             // вывод об успешности операции
-            System.out.println("Замена прошла успешно " + item);
+            out.println("Замена прошла успешно " + item);
 
         } else {
             // вывод об ошибке
-            System.out.println(" id не найдено");
+            out.println(" id не найдено");
         }
         return true;
     }
