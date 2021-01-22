@@ -18,10 +18,10 @@ public class DeleteItemAction implements UserAction{
         int id = Integer.valueOf(input.askStr("Enter id: "));
         if (tracker.delete(id)) {
             // вывод об успешности операции
-            System.out.println("Удаление прошло успешно ");
+           out.println("Удаление прошло успешно ");
         } else {
             // вывод об ошибке
-            System.out.println(" id не найдено");
+            out.println(" id не найдено");
         }
         return true;
     }
