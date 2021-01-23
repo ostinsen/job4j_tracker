@@ -31,14 +31,15 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(output),
-                new ShowAllItemAction(output),
-                new EditItemAction(output),
-                new DeleteItemAction(output),
-                new FindIdItemAction(output),
-                new FindNameItemAction(output),
-                new ExitAction()
+                  new CreateAction(output),
+                  new ShowAllItemAction(output),
+                  new EditItemAction(output),
+                  new DeleteItemAction(output),
+                  new FindIdItemAction(output),
+                  new FindNameItemAction(output),
+                  new ExitAction()
         };
         new StartUI(output).init(input, tracker, actions);
+
     }
 }
