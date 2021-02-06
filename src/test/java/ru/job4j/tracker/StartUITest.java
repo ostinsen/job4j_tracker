@@ -13,7 +13,7 @@ public void whenExit() {
     Input in = new StubInput(
             new String[] {"0"}
     );
-    Tracker tracker = new Tracker();
+    Tracker tracker = Tracker.getInstance();
     UserAction[] actions = {
             new ExitAction()
     };
@@ -29,7 +29,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"0", "1"}
         );
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         UserAction[] actions = {
                 new ShowAllItemAction(out),
                 new ExitAction()
@@ -50,7 +50,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"0", "first", "1"}
         );
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         UserAction[] actions = {
                 new FindNameItemAction(out),
                 new ExitAction()
@@ -73,7 +73,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"0", "9", "1"}
         );
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         UserAction[] actions = {
                 new FindIdItemAction(out),
                 new ExitAction()
@@ -95,7 +95,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] { "7", "0" }
         );
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         UserAction[] actions = {
                 new ExitAction()
         };
