@@ -59,4 +59,24 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 
+    @Test
+    public void digitals(){
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "12345",
+                "13456"
+        );
+        assertThat(rst, lessThan(0));
+    }
+
+    @Test
+    public void secondCharOfLe(){
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Petr",
+                "Petrov"
+        );
+        assertThat(rst, lessThan(0));
+    }
+
 }

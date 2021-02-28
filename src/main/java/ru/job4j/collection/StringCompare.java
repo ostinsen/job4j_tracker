@@ -19,6 +19,7 @@ public class StringCompare implements Comparator<String> {
             }
             else {
                 rsl = left.length() > right.length() ? 1 : -1;
+                break;
             }
         }
         return rsl;
