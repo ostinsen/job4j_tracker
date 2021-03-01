@@ -79,4 +79,14 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 
+    @Test
+    public void secondCharOf(){
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Petr1",
+                "Petrov"
+        );
+        assertThat(rst, lessThan(0));
+    }
+
 }
