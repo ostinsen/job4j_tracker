@@ -30,4 +30,16 @@ public class UserTest {
                 );
         assertThat(rsl, greaterThan(0));
     }
+
+    @Test
+    public void whenAscUp() {
+        Set<User> users = new TreeSet<>();
+        users.add(new User("Petr", 31));
+        users.add(new User("Petr", 32));
+        users.add(new User("Ivan", 30));
+        Iterator<User> it = users.iterator();
+        assertThat(it.next(), is(new User("Ivan", 30)));
+        assertThat(it.next(), is(new User("Petr", 31)));
+        assertThat(it.next(), is(new User("Petr", 32)));
+    }
 }

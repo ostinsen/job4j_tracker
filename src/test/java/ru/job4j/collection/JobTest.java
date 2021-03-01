@@ -31,7 +31,7 @@ public class JobTest {
                 new Job("Fix bug", 2),
                 new Job("X task", 0)
         );
-        Collections.sort(jobs, new JobDescByNameDown());
+        Collections.sort(jobs, new JobAbcByName());
         List<Job> expected = Arrays.asList(
                 new Job("AAA bug", 4),
                 new Job("Fix bug", 1),
@@ -53,7 +53,7 @@ public class JobTest {
 
     @Test
     public void whenCompatorByProrityDown() {
-        Comparator<Job> cmpNamePriority = new JobDescByPriorityDown();
+        Comparator<Job> cmpNamePriority = new Job123ByPriority();
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 11),
                 new Job("Fix bug", 10)
@@ -79,7 +79,7 @@ public class JobTest {
                 new Job("Fix bug", 2),
                 new Job("X task", 0)
         );
-        Collections.sort(jobs, new JobDescByName().thenComparing(new JobDescByPriorityDown()));
+        Collections.sort(jobs, new JobDescByName().thenComparing(new Job123ByPriority()));
         List<Job> expected = Arrays.asList(
                 new Job("X task", 0),
                 new Job("Fix bug", 2),
