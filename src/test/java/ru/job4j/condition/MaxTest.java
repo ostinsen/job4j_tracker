@@ -36,6 +36,7 @@ public class MaxTest {
         int rsl = Max.max(first, second, third, fourth);
         assertThat(rsl, is(expected));
     }
+
     @Test
     public void testMax2() {
         int rsl = Max.max(50, 0, 10, -2);

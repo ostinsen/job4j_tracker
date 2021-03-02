@@ -9,7 +9,7 @@ private static Tracker instance = null;
     private List<Item> items = new ArrayList<>();
     private int ids = 1;
 
-    private Tracker(){
+    private Tracker() {
 
     }
 
@@ -37,14 +37,15 @@ private static Tracker instance = null;
         }
         return rsl;
     }
-    public List<Item> findAll(){
+
+    public List<Item> findAll() {
         return  items;
     }
 
-    public List<Item> findByName(String key){
+    public List<Item> findByName(String key) {
         List<Item> itemsName = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getName().equals(key)){
+            if (items.get(i).getName().equals(key)) {
                 itemsName.add(items.get(i));
             }
         }
@@ -62,10 +63,10 @@ private static Tracker instance = null;
         return rsl;
     }
 
-    public boolean replace (int id, Item item) {
+    public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean rsl = index != -1;
-        if (rsl){
+        if (rsl) {
             item.setId(id);
             items.set(index, item);
         }
@@ -75,7 +76,7 @@ private static Tracker instance = null;
     public boolean delete(int id) {
         int ind = indexOf(id);
         boolean rsl = ind != -1;
-        if (rsl){
+        if (rsl) {
             items.remove(ind);
         }
         return rsl;

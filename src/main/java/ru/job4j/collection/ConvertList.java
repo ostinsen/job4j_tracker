@@ -8,7 +8,7 @@ public class ConvertList {
         List<Integer> rsl = new ArrayList<>();
 
         for (int[] arr : list) {
-            for (int inter : arr ) {
+            for (int inter : arr) {
                 rsl.add(inter);
             }
         }

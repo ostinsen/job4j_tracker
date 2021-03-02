@@ -23,11 +23,13 @@ public void whenExit() {
 
     new StartUI(out).init(in, tracker, actions);
     assertThat(out.toString(), is(
-            "Menu." + System.lineSeparator() +
+            "Menu." + System.lineSeparator()
+                    +
                     "0. Exit" + System.lineSeparator()
     ));
 }
-    @Test
+
+@Test
     public void whenShowAllAction() {
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -41,15 +43,19 @@ public void whenExit() {
 
             new StartUI(out).init(in, tracker, actions);
             assertThat(out.toString(), is(
-                    "Menu." + System.lineSeparator() +
-                            "0. === 1. Show all items ====" + System.lineSeparator() +
-                            "1. Exit" + System.lineSeparator() +
-                            "Menu." + System.lineSeparator() +
-                            "0. === 1. Show all items ====" + System.lineSeparator() +
+                    "Menu." + System.lineSeparator()
+                            +
+                            "0. === 1. Show all items ====" + System.lineSeparator()
+                            +
+                            "1. Exit" + System.lineSeparator()
+                            +
+                            "Menu." + System.lineSeparator()
+                            +
+                            "0. === 1. Show all items ====" + System.lineSeparator()
+                            +
                             "1. Exit" + System.lineSeparator()
             ));
         }
-
 
     @Test
     public void whenFindByName() {
@@ -63,12 +69,18 @@ public void whenExit() {
                 actions.add(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === 5. Find items by name ====" + System.lineSeparator() +
-                        "1. Exit" + System.lineSeparator() +
-                        "Заявки с таким именем не найдены" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. === 5. Find items by name ====" + System.lineSeparator() +
+                "Menu." + System.lineSeparator()
+                        +
+                        "0. === 5. Find items by name ====" + System.lineSeparator()
+                        +
+                        "1. Exit" + System.lineSeparator()
+                        +
+                        "Заявки с таким именем не найдены" + System.lineSeparator()
+                        +
+                        "Menu." + System.lineSeparator()
+                        +
+                        "0. === 5. Find items by name ====" + System.lineSeparator()
+                        +
                         "1. Exit" + System.lineSeparator()
         ));
     }
@@ -86,20 +98,27 @@ public void whenExit() {
 
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === 4. Find item by Id ====" + System.lineSeparator() +
-                        "1. Exit" + System.lineSeparator() +
-                        "Заявка с таким id не найдена" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. === 4. Find item by Id ====" + System.lineSeparator() +
+                "Menu." + System.lineSeparator()
+                        +
+                        "0. === 4. Find item by Id ====" + System.lineSeparator()
+                        +
+                        "1. Exit" + System.lineSeparator()
+                        +
+                        "Заявка с таким id не найдена" + System.lineSeparator()
+                        +
+                        "Menu." + System.lineSeparator()
+                        +
+                        "0. === 4. Find item by Id ====" + System.lineSeparator()
+                        +
                         "1. Exit" + System.lineSeparator()
         ));
     }
+
     @Test
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] { "7", "0" }
+                new String[] {"7", "0" }
         );
         Tracker tracker = Tracker.getInstance();
         List<UserAction> actions = new ArrayList<>();

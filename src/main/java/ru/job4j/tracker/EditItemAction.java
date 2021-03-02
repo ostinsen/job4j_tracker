@@ -14,7 +14,7 @@ private final Output out;
     }
 
     @Override
-    public boolean execute (Input input, Tracker tracker) {
+    public boolean execute(Input input, Tracker tracker) {
 
         int id = Integer.valueOf(input.askStr("Enter id: "));
         String name = input.askStr("Enter name: ");

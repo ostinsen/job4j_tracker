@@ -16,6 +16,7 @@ public class PointTest {
         double exp = 3;
         Assert.assertEquals(exp, out, 0.01);
     }
+
     @Test
     public void distance3D1() {
         Point one = new Point(0, 0, 0);
@@ -24,6 +25,7 @@ public class PointTest {
         double exp = 5;
         Assert.assertEquals(exp, out, 0.01);
     }
+
     @Test
     public void distance3D2() {
         Point one = new Point(3, 100, 12);

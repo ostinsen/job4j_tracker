@@ -15,7 +15,9 @@ public class Matches {
             if (select >= 1 && select <= 3) {
                 mathes = mathes - select;
                 count++;
-                if (mathes <= 0) run = false;
+                if (mathes <= 0) {
+                    run = false;
+                }
                 System.out.println("осталось спичек " + mathes);
             } else {
                 System.out.println("Повторите ввод ");

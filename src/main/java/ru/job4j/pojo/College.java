@@ -6,6 +6,7 @@ public class College {
         student.setFullName("Alex Oskin");
         student.setGroup("elementary");
         student.setDatePass("17.12.20");
-        System.out.println("ФИО - " + student.getFullName() + " группа - " + student.getGroup() + " DAte of pass - " + student.getDatePass());
+        System.out.println("ФИО - " + student.getFullName()
+                + " группа - " + student.getGroup() + " DAte of pass - " + student.getDatePass());
     }
 }

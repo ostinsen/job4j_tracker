@@ -22,13 +22,13 @@ public class ItemSortUpTest {
         tracker.add(new Item("6aaa"));
         Collections.sort(tracker.findAll(), new ItemSortUp());
         List<Item> expected = Arrays.asList(
-                new Item(1,"1aaa"),
-                new Item(2,"2aaa"),
-                new Item(4,"3aaa"),
-                new Item(3,"4aaa"),
-                new Item(6,"5aaa"),
-                new Item(7,"6aaa"),
-                new Item(5,"7aaa")
+                new Item(1, "1aaa"),
+                new Item(2, "2aaa"),
+                new Item(4, "3aaa"),
+                new Item(3, "4aaa"),
+                new Item(6, "5aaa"),
+                new Item(7, "6aaa"),
+                new Item(5, "7aaa")
         );
        assertThat(tracker.findAll(), is(expected));
     }
@@ -46,13 +46,13 @@ public class ItemSortUpTest {
         tracker.add(new Item("6aaa"));
         Collections.sort(tracker.findAll(), new ItemSortDown());
         List<Item> expected = Arrays.asList(
-                new Item(5,"7aaa"),
-                new Item(7,"6aaa"),
-                new Item(6,"5aaa"),
-                new Item(3,"4aaa"),
-                new Item(4,"3aaa"),
-                new Item(2,"2aaa"),
-                new Item(1,"1aaa")
+                new Item(5, "7aaa"),
+                new Item(7, "6aaa"),
+                new Item(6, "5aaa"),
+                new Item(3, "4aaa"),
+                new Item(4, "3aaa"),
+                new Item(2, "2aaa"),
+                new Item(1, "1aaa")
         );
         assertThat(tracker.findAll(), is(expected));
     }

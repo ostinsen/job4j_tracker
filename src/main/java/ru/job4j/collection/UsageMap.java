@@ -10,7 +10,7 @@ public class UsageMap {
         map.put("parsentev@yande", "Petr Arse");
         map.put("parsentev@yan", "Petr Ar");
 
-        for (String key : map.keySet()){
+        for (String key : map.keySet()) {
             String value = map.get(key);
             System.out.println(key + ": " + value);
         }
