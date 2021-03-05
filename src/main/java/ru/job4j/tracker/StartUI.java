@@ -36,7 +36,7 @@ private final Output out;
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>(Arrays.asList(
                 new CreateAction(output),
                 new ShowAllItemAction(output),

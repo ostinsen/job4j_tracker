@@ -17,7 +17,7 @@ public void whenExit() {
     Input in = new StubInput(
             new String[] {"0"}
     );
-    Tracker tracker = Tracker.getInstance();
+    Tracker tracker = new Tracker();
     List<UserAction> actions = new ArrayList<>();
             actions.add(new ExitAction());
 
@@ -29,33 +29,33 @@ public void whenExit() {
     ));
 }
 
-//@Test
-//    public void whenShowAllAction() {
-//        Output out = new StubOutput();
-//        Input in = new StubInput(
-//                new String[]{"0", "1"}
-//        );
-//        Tracker tracker = Tracker.getInstance();
-//        List<UserAction> actions = new ArrayList<>();
-//
-//            actions.add(new ShowAllItemAction(out));
-//            actions.add(new ExitAction());
-//
-//            new StartUI(out).init(in, tracker, actions);
-//            assertThat(out.toString(), is(
-//                    "Menu." + System.lineSeparator()
-//                            +
-//                            "0. === 1. Show all items ====" + System.lineSeparator()
-//                            +
-//                            "1. Exit" + System.lineSeparator()
-//                            +
-//                            "Menu." + System.lineSeparator()
-//                            +
-//                            "0. === 1. Show all items ====" + System.lineSeparator()
-//                            +
-//                            "1. Exit" + System.lineSeparator()
-//            ));
-//        }
+@Test
+    public void whenShowAllAction() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"0", "1"}
+        );
+        Tracker tracker = new Tracker();
+        List<UserAction> actions = new ArrayList<>();
+
+            actions.add(new ShowAllItemAction(out));
+            actions.add(new ExitAction());
+
+            new StartUI(out).init(in, tracker, actions);
+            assertThat(out.toString(), is(
+                    "Menu." + System.lineSeparator()
+                            +
+                            "0. === 1. Show all items ====" + System.lineSeparator()
+                            +
+                            "1. Exit" + System.lineSeparator()
+                            +
+                            "Menu." + System.lineSeparator()
+                            +
+                            "0. === 1. Show all items ====" + System.lineSeparator()
+                            +
+                            "1. Exit" + System.lineSeparator()
+            ));
+        }
 
     @Test
     public void whenFindByName() {
@@ -63,7 +63,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"0", "first", "1"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
               actions.add(new FindNameItemAction(out));
                 actions.add(new ExitAction());
@@ -91,7 +91,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"0", "9", "1"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
                actions.add(new FindIdItemAction(out));
                actions.add(new ExitAction());
@@ -120,7 +120,7 @@ public void whenExit() {
         Input in = new StubInput(
                 new String[] {"7", "0" }
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
                 actions.add(new ExitAction());
 
