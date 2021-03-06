@@ -16,8 +16,8 @@ public class User {
 
     /**
      * Конструктор клиента для инициализации имени и паспорта
-     * @param passport
-     * @param username
+     * @param passport паспортные данные клиента
+     * @param username имя клиента
      */
     public User(String passport, String username) {
         this.passport = passport;

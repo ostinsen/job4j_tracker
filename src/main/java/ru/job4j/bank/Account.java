@@ -50,7 +50,7 @@ public class Account {
 
     /**
      * устанавливает новый баланс счета
-     * @param balance
+     * @param balance баланс счета
      */
     public void setBalance(double balance) {
         this.balance = balance;
