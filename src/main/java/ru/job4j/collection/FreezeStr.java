@@ -6,24 +6,28 @@ import java.util.Map;
 public class FreezeStr {
     public static boolean eq(String left, String right) {
 
-        String[] leftArr = left.split("");
-        String[] rightArr = right.split("");
-        Map<String, Integer> leftMap = mapIn(leftArr);
-        Map<String, Integer> rightMap = mapIn(rightArr);
-
-        return leftMap.equals(rightMap);
-    }
-   public static Map<String, Integer> mapIn(String[] array){
-        Map<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < array.length; i++) {
-            map.put(array[i], 0);
-            int count = 1;
-            for (int j = 0; j < array.length; j++) {
-                if (array[i].equals(array[j])){
-                    map.put(array[i], count++);
+       char[] leftArr = left.toCharArray();
+       char[] rightArr = right.toCharArray();
+       Map<Character, Integer> map = new HashMap<>();
+       for (int i = 0; i < leftArr.length; i++) {
+           int count = 0;
+           for (int j = 0; j < leftArr.length; j++) {
+             if (leftArr[i] == leftArr[j]) {
+                 count++;
+             }
+           }
+           map.putIfAbsent(leftArr[i], count);
+        }
+        for (int i = 0; i < rightArr.length; i++) {
+            char c = rightArr[i];
+            if (map.containsKey(c)) {
+                if (map.get(c) > 1){
+                    map.put(c, map.get(c) - 1);
+                } else if (map.get(c) == 1){
+                    map.remove(c);
                 }
             }
         }
-        return map;
+        return map.isEmpty();
     }
 }

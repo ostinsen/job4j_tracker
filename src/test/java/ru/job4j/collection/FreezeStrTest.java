@@ -11,6 +11,10 @@ public class FreezeStrTest {
     public void whenEq() {
         assertThat(FreezeStr.eq("Hello", "Hlloe"), CoreMatchers.<Boolean>is(true));
     }
+    @Test
+    public void whenEq1() {
+        assertThat(FreezeStr.eq("Hello", "oellH"), CoreMatchers.<Boolean>is(true));
+    }
 
     @Test
     public void whenNotEq() {
