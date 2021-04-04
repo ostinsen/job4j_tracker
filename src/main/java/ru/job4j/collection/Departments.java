@@ -10,11 +10,10 @@ public class Departments {
             for (String el : value.split("/")) {
                 if (start.equals("")){
                     start = start + el;
-                    tmp.add(start);
                 } else {
                     start = start + "/" + el;
-                    tmp.add(start);
                 }
+                tmp.add(start);
             }
         }
         return new ArrayList<>(tmp);
@@ -22,9 +21,20 @@ public class Departments {
 
     public static void sortAsc(List<String> orgs) {
     Collections.sort(orgs, Comparator.naturalOrder());
+        System.out.println(orgs);
     }
 
     public static void sortDesc(List<String> orgs) {
             Collections.sort(orgs, new DepDescComp());
+        System.out.println(orgs);
     }
+
+    public static void main(String[] args) {
+        Departments.fillGaps(Arrays.asList("K1/SK1/SSK1", "K1/SK2", "K1/SK1/SSK2", "K2/SK1/SSK1"));
+        sortAsc(Departments.fillGaps(Arrays.asList("K1/SK1/SSK1", "K1/SK2", "K1/SK1/SSK2", "K2/SK1/SSK1")));
+        sortDesc(Departments.fillGaps(Arrays.asList("K1/SK1/SSK1", "K1/SK2", "K1/SK1/SSK2", "K2/SK1/SSK1")));
+
+    }
+
+
 }
