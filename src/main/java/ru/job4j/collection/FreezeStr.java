@@ -10,13 +10,11 @@ public class FreezeStr {
        char[] rightArr = right.toCharArray();
        Map<Character, Integer> map = new HashMap<>();
        for (int i = 0; i < leftArr.length; i++) {
-           int count = 0;
-           for (int j = 0; j < leftArr.length; j++) {
-             if (leftArr[i] == leftArr[j]) {
-                 count++;
-             }
+           if (!map.containsKey(leftArr[i])){
+               map.put(leftArr[i], 1);
+           } else {
+               map.computeIfPresent(leftArr[i], (key, value) -> value + 1);
            }
-           map.putIfAbsent(leftArr[i], count);
         }
         for (int i = 0; i < rightArr.length; i++) {
             char c = rightArr[i];
