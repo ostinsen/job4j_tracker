@@ -22,19 +22,9 @@ public class Departments {
 
     public static void sortAsc(List<String> orgs) {
     Collections.sort(orgs, Comparator.naturalOrder());
-        System.out.println(orgs);
     }
 
     public static void sortDesc(List<String> orgs) {
             Collections.sort(orgs, new DepDescComp());
-        System.out.println(orgs);
-    }
-
-
-
-    public static void main(String[] args) {
-      sortAsc(Departments.fillGaps(Arrays.asList("K1/SK1/SSK1", "K2/SK1/SSK2")));
-      sortDesc(Departments.fillGaps(Arrays.asList("K1/SK1/SSK1", "K2/SK1/SSK2")));
-
     }
 }
