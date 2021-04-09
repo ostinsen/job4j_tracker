@@ -12,7 +12,7 @@ public class LambdaUsage {
 
         Comparator<String> cmpDescSize = (left, right) -> {
             System.out.println("compare " + left.length() + " : " + right.length());
-               return -(left.length() - right.length());
+               return Integer.compare(right.length(), left.length());
         };
     }
 }
