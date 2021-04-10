@@ -12,8 +12,4 @@ public class Diapason {
         }
             return list;
     }
-
-    Function<Double, Double> funcLiner = x -> 2 * x + 1;
-    Function<Double, Double> funcSquare = x -> x * x;
-    Function<Double, Double> funcExp = x -> Math.pow(2.0, x);
 }

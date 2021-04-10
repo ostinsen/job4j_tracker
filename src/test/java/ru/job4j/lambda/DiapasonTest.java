@@ -11,19 +11,19 @@ import static org.junit.Assert.*;
 public class DiapasonTest {
     @Test
     public void whenLinearFunctionThenLinearResults() {
-        List<Double> result = new Diapason().diapason(5, 8, new Diapason().funcLiner);
+        List<Double> result = new Diapason().diapason(5, 8, x -> 2 * x + 1);
         List<Double> expected = Arrays.asList(11D, 13D, 15D);
         assertThat(result, is(expected));
     }
     @Test
     public void whenSquareFunction() {
-        List<Double> result = new Diapason().diapason(5, 8, new Diapason().funcSquare);
+        List<Double> result = new Diapason().diapason(5, 8, x -> x * x);
         List<Double> expected = Arrays.asList(25D, 36D, 49D);
         assertThat(result, is(expected));
     }
     @Test
     public void whenExpFunction() {
-        List<Double> result = new Diapason().diapason(5, 8, new Diapason().funcExp);
+        List<Double> result = new Diapason().diapason(5, 8, x -> Math.pow(2.0, x));
         List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
     }
