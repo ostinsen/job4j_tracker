@@ -25,7 +25,9 @@ public class StudentListTest {
         Map<String, Student> exp = Map.of(
                 "Jane", new Student(1, "Jane"),
                 "Bush", new Student(2, "Bush"),
+               // "Bush", new Student(2, "Bush"),
                 "Obama", new Student(4, "Obama"),
+              //  "Obama", new Student(4, "Obama"),
                 "Trump", new Student(3, "Trump"),
                 "Bayden", new Student(5, "Bayden")
         );
