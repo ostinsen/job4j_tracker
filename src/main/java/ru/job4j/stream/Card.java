@@ -28,10 +28,9 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        Value[] values = {Value.V_6, Value.V_7, Value.V_8};
-        Suit[]  suits = {Suit.Diamonds, Suit.Hearts, Suit.Spades, Suit.Clubs};
-        Stream.of(values)
-                .flatMap(value -> Stream.of(suits)
+
+        Stream.of(Value.values())
+                .flatMap(value -> Stream.of(Suit.values())
                         .map(suit -> new Card(suit, value)))
                 .forEach(System.out::println);
     }
