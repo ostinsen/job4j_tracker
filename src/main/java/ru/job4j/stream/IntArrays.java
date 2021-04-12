@@ -7,15 +7,9 @@ import java.util.stream.Collectors;
 
 public class IntArrays {
     public static List<Integer> intsToList(Integer[][] array){
-        List<List<Integer>> list = new ArrayList<>();
-        for (Integer[] arr: array){
-            list.add(Arrays.asList(arr));
-        }
-        return list.stream()
-                .flatMap(List::stream)
+
+        return Arrays.stream(array)
+                .flatMap(e -> Arrays.stream(e))
                 .collect(Collectors.toList());
-//        return Arrays.stream(array)
-//                .flatMap(e -> Arrays.stream(e))
-//                .collect(Collectors.toList());
     }
 }
