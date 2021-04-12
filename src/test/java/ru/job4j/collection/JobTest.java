@@ -34,7 +34,7 @@ public class JobTest {
                 new Job("X task", 0)
         );
         Collections.sort(jobs, new JobAbcByName());
-        List<Job> expected = Arrays.asList(
+        List<Job> expected = List.of(
                 new Job("AAA bug", 4),
                 new Job("Fix bug", 1),
                 new Job("Fix bug", 2),
