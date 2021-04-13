@@ -1,9 +1,7 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * Класс опысывает банковские операции над счетами клиентов банка.
@@ -52,11 +50,18 @@ public class BankService {
      */
 
     public User findByPassport(String passport) {
-        return users.keySet()
-                .stream()
-                .filter(user -> user.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+        Stream<User> stream = users.keySet().stream();
+        Optional<User> rsl = stream.filter(e -> e.getPassport().equals(passport)).findFirst();
+            if (rsl.isPresent()){
+                return rsl.get();
+            } else {
+                return null;
+            }
+//        return users.keySet()
+//                .stream()
+//                .filter(user -> user.getPassport().equals(passport))
+//                .findFirst()
+//                .orElse(null);
     }
 
     /**
@@ -68,15 +73,22 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
-        if (user != null) {
-            return users.get(user)
-                    .stream()
-                    .filter(u -> u.getRequisite().equals(requisite))
-                    .findFirst()
-                    .orElse(null);
-        }
 
-        return null;
+        if (user != null) {
+            Stream<Account> stream = users.get(user).stream();
+            Optional<Account> rsl = stream.filter(u -> u.getRequisite().equals(requisite)).findFirst();
+            if (rsl.isPresent()) {
+                return rsl.get();
+            }
+        }
+//        if (user != null) {
+//            return users.get(user)
+//                    .stream()
+//                    .filter(u -> u.getRequisite().equals(requisite))
+//                    .findFirst()
+//                    .orElse(null);
+//        }
+       return null;
     }
 
     /**
