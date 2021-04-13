@@ -82,7 +82,7 @@ public class JobTest {
                 new Job("X task", 0)
         );
         Collections.sort(jobs, new JobDescByName().thenComparing(new Job123ByPriority()));
-        List<Job> expected = Arrays.asList(
+        List<Job> expected = List.of(
                 new Job("X task", 0),
                 new Job("Fix bug", 2),
                 new Job("Fix bug", 10),
