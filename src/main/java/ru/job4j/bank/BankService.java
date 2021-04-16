@@ -84,17 +84,17 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
-        Account accountSrc = findByRequisite(srcPassport, srcRequisite).get();
+       Optional<Account>  accountSrc = findByRequisite(srcPassport, srcRequisite);
 
-        Account accountDest = findByRequisite(destPassport, destRequisite).get();
+        Optional<Account> accountDest = findByRequisite(destPassport, destRequisite);
 
-        if (accountSrc == null || accountDest == null || (accountSrc.getBalance() < amount)) {
+        if (accountSrc == null || accountDest == null || (accountSrc.get().getBalance() < amount)) {
             return false;
         }
 
-        accountSrc.setBalance(accountSrc.getBalance() - amount);
+        accountSrc.get().setBalance(accountSrc.get().getBalance() - amount);
 
-        accountDest.setBalance(accountDest.getBalance() + amount);
+        accountDest.get().setBalance(accountDest.get().getBalance() + amount);
 
         return true;
     }
