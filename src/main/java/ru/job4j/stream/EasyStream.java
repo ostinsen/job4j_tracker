@@ -23,7 +23,7 @@ public class EasyStream {
 
         List<Integer> list2 = new ArrayList<>();
         for (Integer i  : list) {
-            list2.add(fun.apply(this.list.get(i)));
+            list2.add(fun.apply(i));
         }
         return new EasyStream(list2);
     }
